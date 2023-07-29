@@ -35,41 +35,210 @@
 	<script src="./wp-includes/js/jquery/jquery.min.js" id="jquery-core-js"></script>
 	<script src="./wp-includes/js/jquery/jquery-migrate.min.js" id="jquery-migrate-js"></script>
 
+	<script id="wp-i18n-js-after">
+		wp.i18n.setLocaleData({
+			"text direction\u0004ltr": ["ltr"],
+		});
+	</script>
 
-	<!-- 
-		<link rel="stylesheet" id="wp-block-library-css" href="https://yrkit.rometheme.pro/bitco/wp-includes/css/dist/block-library/style.min.css?ver=6.2.2" media="all" />
-		<link rel="stylesheet" id="classic-theme-styles-css" href="https://yrkit.rometheme.pro/bitco/wp-includes/css/classic-themes.min.css?ver=6.2.2" media="all" />
-		<link rel="stylesheet" id="template-kit-export-css" href="https://yrkit.rometheme.pro/bitco/wp-content/plugins/template-kit-export/public/assets/css/template-kit-export-public.min.css?ver=1.0.21" media="all" />
-		<link rel="stylesheet" id="hello-elementor-css" href="https://yrkit.rometheme.pro/bitco/wp-content/themes/hello-elementor/style.min.css?ver=2.7.1" media="all" />
-		<link rel="stylesheet" id="hello-elementor-theme-style-css" href="https://yrkit.rometheme.pro/bitco/wp-content/themes/hello-elementor/theme.min.css?ver=2.7.1" media="all" />
-		<link rel="stylesheet" id="elementor-icons-css" href="https://yrkit.rometheme.pro/bitco/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.20.0" media="all" />
-		<link rel="stylesheet" id="elementor-frontend-legacy-css" href="https://yrkit.rometheme.pro/bitco/wp-content/plugins/elementor/assets/css/frontend-legacy.min.css?ver=3.13.4" media="all" />
-		<link rel="stylesheet" id="elementor-frontend-css" href="https://yrkit.rometheme.pro/bitco/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.13.4" media="all" />
-		<link rel="stylesheet" id="swiper-css" href="https://yrkit.rometheme.pro/bitco/wp-content/plugins/elementor/assets/lib/swiper/css/swiper.min.css?ver=5.3.6" media="all" />
-		<link rel="stylesheet" id="elementor-post-5-css" href="https://yrkit.rometheme.pro/bitco/wp-content/uploads/sites/20/elementor/css/post-5.css?ver=1682492633" media="all" />
-		<link rel="stylesheet" id="elementor-pro-css" href="https://yrkit.rometheme.pro/bitco/wp-content/plugins/elementor-pro/assets/css/frontend.min.css?ver=3.7.1" media="all" />
-		<link rel="stylesheet" id="elementor-post-2-css" href="https://yrkit.rometheme.pro/bitco/wp-content/uploads/sites/20/elementor/css/post-2.css?ver=1682492633" media="all" />
-		<link rel="stylesheet" id="elementor-post-12-css" href="https://yrkit.rometheme.pro/bitco/wp-content/uploads/sites/20/elementor/css/post-12.css?ver=1682492633" media="all" />
-		<link rel="stylesheet" id="elementor-post-31-css" href="https://yrkit.rometheme.pro/bitco/wp-content/uploads/sites/20/elementor/css/post-31.css?ver=1682492633" media="all" />
-		<link rel="stylesheet" id="google-fonts-1-css" href="https://fonts.googleapis.com/css?family=Arvo%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=auto&#038;ver=6.2.2" media="all" />
-		<link rel="stylesheet" id="elementor-icons-shared-0-css" href="https://yrkit.rometheme.pro/bitco/wp-content/plugins/elementor/assets/lib/font-awesome/css/fontawesome.min.css?ver=5.15.3" media="all" />
-		<link rel="stylesheet" id="elementor-icons-fa-solid-css" href="https://yrkit.rometheme.pro/bitco/wp-content/plugins/elementor/assets/lib/font-awesome/css/solid.min.css?ver=5.15.3" media="all" />
-		<link rel="stylesheet" id="elementor-icons-fa-brands-css" href="https://yrkit.rometheme.pro/bitco/wp-content/plugins/elementor/assets/lib/font-awesome/css/brands.min.css?ver=5.15.3" media="all" />
-		<link rel="stylesheet" id="elementor-icons-fa-regular-css" href="https://yrkit.rometheme.pro/bitco/wp-content/plugins/elementor/assets/lib/font-awesome/css/regular.min.css?ver=5.15.3" media="all" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-		<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
-		<script src="https://yrkit.rometheme.pro/bitco/wp-includes/js/jquery/jquery.min.js?ver=3.6.4" id="jquery-core-js"></script>
-		<script src="https://yrkit.rometheme.pro/bitco/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.0" id="jquery-migrate-js"></script>
-		<script src="https://yrkit.rometheme.pro/bitco/wp-content/plugins/template-kit-export/public/assets/js/template-kit-export-public.min.js?ver=1.0.21" id="template-kit-export-js"></script>
+	<script id="elementor-pro-frontend-js-before">
+		var ElementorProFrontendConfig = {
+			ajaxurl: "https:\/\/yrkit.rometheme.pro\/bitco\/wp-admin\/admin-ajax.php",
+			nonce: "2bb870c4d3",
+			urls: {
+				assets: "https:\/\/yrkit.rometheme.pro\/bitco\/wp-content\/plugins\/elementor-pro\/assets\/",
+				rest: "https:\/\/yrkit.rometheme.pro\/bitco\/wp-json\/",
+			},
+			shareButtonsNetworks: {
+				facebook: {
+					title: "Facebook",
+					has_counter: true,
+				},
+				twitter: {
+					title: "Twitter",
+				},
+				linkedin: {
+					title: "LinkedIn",
+					has_counter: true,
+				},
+				pinterest: {
+					title: "Pinterest",
+					has_counter: true,
+				},
+				reddit: {
+					title: "Reddit",
+					has_counter: true,
+				},
+				vk: {
+					title: "VK",
+					has_counter: true,
+				},
+				odnoklassniki: {
+					title: "OK",
+					has_counter: true,
+				},
+				tumblr: {
+					title: "Tumblr",
+				},
+				digg: {
+					title: "Digg",
+				},
+				skype: {
+					title: "Skype",
+				},
+				stumbleupon: {
+					title: "StumbleUpon",
+					has_counter: true,
+				},
+				mix: {
+					title: "Mix",
+				},
+				telegram: {
+					title: "Telegram",
+				},
+				pocket: {
+					title: "Pocket",
+					has_counter: true,
+				},
+				xing: {
+					title: "XING",
+					has_counter: true,
+				},
+				whatsapp: {
+					title: "WhatsApp",
+				},
+				email: {
+					title: "Email",
+				},
+				print: {
+					title: "Print",
+				},
+			},
+			facebook_sdk: {
+				lang: "en_US",
+				app_id: "",
+			},
+			lottie: {
+				defaultAnimationUrl: "https:\/\/yrkit.rometheme.pro\/bitco\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json",
+			},
+		};
+	</script>
 
-	-->
-	
-	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
-	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.1/jquery-migrate.min.js" integrity="sha512-KgffulL3mxrOsDicgQWA11O6q6oKeWcV00VxgfJw4TcM8XRQT8Df9EsrYxDf7tpVpfl3qcYD96BpyPvA4d1FDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
-	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.0.4/swiper-bundle.min.js" integrity="sha512-0N/5ZOjfsh3niel+5dRD40HQkFOWaxoVzqMVAHnmAO2DC3nY/TFB7OYTaPRAFJ571IRS/XRsXGb2XyiFLFeu1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
-
-
-
+	<script id="elementor-frontend-js-before">
+		var elementorFrontendConfig = {
+			environmentMode: {
+				edit: false,
+				wpPreview: false,
+				isScriptDebug: false,
+			},
+			i18n: {
+				shareOnFacebook: "Share on Facebook",
+				shareOnTwitter: "Share on Twitter",
+				pinIt: "Pin it",
+				download: "Download",
+				downloadImage: "Download image",
+				fullscreen: "Fullscreen",
+				zoom: "Zoom",
+				share: "Share",
+				playVideo: "Play Video",
+				previous: "Previous",
+				next: "Next",
+				close: "Close",
+			},
+			is_rtl: false,
+			breakpoints: {
+				xs: 0,
+				sm: 480,
+				md: 768,
+				lg: 1025,
+				xl: 1440,
+				xxl: 1600,
+			},
+			responsive: {
+				breakpoints: {
+					mobile: {
+						label: "Mobile Portrait",
+						value: 767,
+						default_value: 767,
+						direction: "max",
+						is_enabled: true,
+					},
+					mobile_extra: {
+						label: "Mobile Landscape",
+						value: 880,
+						default_value: 880,
+						direction: "max",
+						is_enabled: false,
+					},
+					tablet: {
+						label: "Tablet Portrait",
+						value: 1024,
+						default_value: 1024,
+						direction: "max",
+						is_enabled: true,
+					},
+					tablet_extra: {
+						label: "Tablet Landscape",
+						value: 1200,
+						default_value: 1200,
+						direction: "max",
+						is_enabled: false,
+					},
+					laptop: {
+						label: "Laptop",
+						value: 1366,
+						default_value: 1366,
+						direction: "max",
+						is_enabled: false,
+					},
+					widescreen: {
+						label: "Widescreen",
+						value: 2400,
+						default_value: 2400,
+						direction: "min",
+						is_enabled: false,
+					},
+				},
+			},
+			version: "3.13.4",
+			is_static: false,
+			experimentalFeatures: {
+				a11y_improvements: true,
+				additional_custom_breakpoints: true,
+				theme_builder_v2: true,
+				"landing-pages": true,
+				"page-transitions": true,
+				notes: true,
+				"form-submissions": true,
+				e_scroll_snap: true,
+			},
+			urls: {
+				assets: "https:\/\/yrkit.rometheme.pro\/bitco\/wp-content\/plugins\/elementor\/assets\/",
+			},
+			swiperClass: "swiper-container",
+			settings: {
+				page: [],
+				editorPreferences: [],
+			},
+			kit: {
+				body_background_background: "classic",
+				active_breakpoints: ["viewport_mobile", "viewport_tablet"],
+				global_image_lightbox: "yes",
+				lightbox_enable_counter: "yes",
+				lightbox_enable_fullscreen: "yes",
+				lightbox_enable_zoom: "yes",
+				lightbox_enable_share: "yes",
+				lightbox_title_src: "title",
+				lightbox_description_src: "description",
+			},
+			post: {
+				id: 2,
+				title: "Bitco%20%E2%80%93%20Just%20another%20Template%20Kit%20site",
+				excerpt: "",
+				featuredImage: false,
+			},
+		};
+	</script>
 
 	<style id="global-styles-inline-css">
 		body {
@@ -446,7 +615,7 @@
 
 <body class="home page-template-default page page-id-2 elementor-default elementor-kit-5 elementor-page elementor-page-2">
 
-	<!-- Header start -->
+	<!-- Header Section start -->
 	<div data-elementor-type="header" data-elementor-id="12" class="elementor elementor-12 elementor-location-header">
 		<div class="elementor-section-wrap">
 
@@ -569,38 +738,28 @@
 																			<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-2 current_page_item menu-item-120">
 																				<a href="./" aria-current="page" class="elementor-item elementor-item-active">Home</a>
 																			</li>
-																			<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-121">
-																				<a href="./index.html" class="elementor-item">About Us</a>
-																				<ul class="sub-menu elementor-nav-menu--dropdown">
-																					<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-122">
-																						<a href="./index.html" class="elementor-sub-item">Our Team</a>
-																					</li>
-																				</ul>
+																			<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-121">
+																				<a href="#about-us" class="elementor-item">About Us</a>
 																			</li>
 																			<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-123">
-																				<a href="./index.html" class="elementor-item">Services</a>
+																				<a href="#why-choose-us" class="elementor-item">Services</a>
 																			</li>
-																			<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-126">
-																				<a href="./index.html" class="elementor-item">Blog</a>
-																				<ul class="sub-menu elementor-nav-menu--dropdown">
-																					<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-129">
-																						<a href="./index.html" class="elementor-sub-item">Single Post</a>
-																					</li>
-																				</ul>
-																			</li>
-																			<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-128">
-																				<a class="elementor-item">Pages</a>
-																				<ul class="sub-menu elementor-nav-menu--dropdown">
-																					<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-127">
-																						<a href="./index.html" class="elementor-sub-item">404 Error Page</a>
-																					</li>
-																					<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-124">
-																						<a href="./index.html" class="elementor-sub-item">How it Works</a>
-																					</li>
-																				</ul>
+																			<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-126">
+																				<a href="#testimonial" class="elementor-item">Clients</a>
 																			</li>
 																			<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-125">
-																				<a href="./index.html" class="elementor-item">Contact Us</a>
+																				<a href="#contact-us" class="elementor-item">Contact Us</a>
+																			</li>
+																			<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-128">
+																				<a class="elementor-item">More</a>
+																				<ul class="sub-menu elementor-nav-menu--dropdown">
+																					<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-127">
+																						<a href="#buy-sell" class="elementor-sub-item">Buy & Sell Bitcoin</a>
+																					</li>
+																					<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-122">
+																						<a href="#our-team" class="elementor-sub-item">Our Team</a>
+																					</li>
+																				</ul>
 																			</li>
 																		</ul>
 																	</nav>
@@ -617,38 +776,28 @@
 																			<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-2 current_page_item menu-item-120">
 																				<a href="./" aria-current="page" class="elementor-item elementor-item-active" tabindex="-1">Home</a>
 																			</li>
-																			<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-121">
-																				<a href="./index.html" class="elementor-item" tabindex="-1">About Us</a>
-																				<ul class="sub-menu elementor-nav-menu--dropdown">
-																					<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-122">
-																						<a href="./index.html" class="elementor-sub-item" tabindex="-1">Our Team</a>
-																					</li>
-																				</ul>
+																			<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-121">
+																				<a href="#about-us" class="elementor-item" tabindex="-1">About Us</a>
 																			</li>
 																			<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-123">
-																				<a href="./index.html" class="elementor-item" tabindex="-1">Services</a>
+																				<a href="#why-choose-us" class="elementor-item" tabindex="-1">Services</a>
 																			</li>
-																			<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-126">
-																				<a href="./index.html" class="elementor-item" tabindex="-1">Blog</a>
-																				<ul class="sub-menu elementor-nav-menu--dropdown">
-																					<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-129">
-																						<a href="./index.html" class="elementor-sub-item" tabindex="-1">Single Post</a>
-																					</li>
-																				</ul>
-																			</li>
-																			<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-128">
-																				<a class="elementor-item" tabindex="-1">Pages</a>
-																				<ul class="sub-menu elementor-nav-menu--dropdown">
-																					<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-127">
-																						<a href="./index.html" class="elementor-sub-item" tabindex="-1">404 Error Page</a>
-																					</li>
-																					<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-124">
-																						<a href="./index.html" class="elementor-sub-item" tabindex="-1">How it Works</a>
-																					</li>
-																				</ul>
+																			<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-126">
+																				<a href="#testimonial" class="elementor-item" tabindex="-1">Clients</a>
 																			</li>
 																			<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-125">
-																				<a href="./index.html" class="elementor-item" tabindex="-1">Contact Us</a>
+																				<a href="#contact-us" class="elementor-item" tabindex="-1">Contact Us</a>
+																			</li>
+																			<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-128">
+																				<a class="elementor-item" tabindex="-1">More</a>
+																				<ul class="sub-menu elementor-nav-menu--dropdown">
+																					<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-127">
+																						<a href="#buy-sell" class="elementor-sub-item" tabindex="-1">Buy & Sell Bitcoin</a>
+																					</li>
+																					<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-122">
+																						<a href="#our-team" class="elementor-sub-item" tabindex="-1">Our Team</a>
+																					</li>
+																				</ul>
 																			</li>
 																		</ul>
 																	</nav>
@@ -665,7 +814,7 @@
 															<div class="elementor-element elementor-element-143b5d9c elementor-align-right elementor-mobile-align-center elementor-widget elementor-widget-button" data-id="143b5d9c" data-element_type="widget" data-widget_type="button.default">
 																<div class="elementor-widget-container">
 																	<div class="elementor-button-wrapper">
-																		<a href="#" class="elementor-button-link elementor-button elementor-size-md" role="button">
+																		<a href="./index.html" target="_blank" class="elementor-button-link elementor-button elementor-size-md" role="button">
 																			<span class="elementor-button-content-wrapper">
 																				<span class="elementor-button-icon elementor-align-icon-right">
 																					<i aria-hidden="true" class="fas fa-long-arrow-alt-right"></i>
@@ -692,7 +841,7 @@
 			</section>
 		</div>
 	</div>
-	<!-- Header end -->
+	<!-- Header Section end -->
 
 	<!-- Main Section start -->
 	<main id="content" class="site-main post-2 page type-page status-publish hentry">
@@ -701,19 +850,8 @@
 				<div class="elementor-inner">
 					<div class="elementor-section-wrap">
 
-						<!-- 
-								https:\/\/yrkit.rometheme.pro\/bitco\/wp-content\/uploads\/sites\/20\/2021\/06\/s12.jpg,
-								https:\/\/wasiarain.github.io\/Muza\/assets\/images\/s12.jpg,
-								https:\/\/yrkit.rometheme.pro\/bitco\/wp-content\/uploads\/sites\/20\/2021\/06\/s4.jpg,
-								https:\/\/wasiarain.github.io\/Muza\/assets\/images\/s4.jpg
-								https:\/\/yrkit.rometheme.pro\/bitco\/wp-content\/uploads\/sites\/20\/2021\/06\/s5.jpg,
-								https:\/\/wasiarain.github.io\/Muza\/assets\/images\/s5.jpg,
-								https://wasiarain.github.io/Muza/assets/images/s12.jpg
-							-->
-
 						<!-- Landing Page start -->
-						<!-- <section class="elementor-section elementor-top-section elementor-element elementor-element-a2306ca elementor-section-height-min-height elementor-section-boxed elementor-section-height-default elementor-section-items-middle" data-id="a2306ca" data-element_type="section" data-settings='{"background_background":"slideshow","background_slideshow_gallery":[{"id":52,"url":"https:\/\/yrkit.rometheme.pro\/bitco\/wp-content\/uploads\/sites\/20\/2021\/06\/s12.jpg"},{"id":44,"url":"https:\/\/yrkit.rometheme.pro\/bitco\/wp-content\/uploads\/sites\/20\/2021\/06\/s4.jpg"},{"id":45,"url":"https:\/\/yrkit.rometheme.pro\/bitco\/wp-content\/uploads\/sites\/20\/2021\/06\/s5.jpg"}],"background_slideshow_slide_transition":"slide_left","background_slideshow_loop":"yes","background_slideshow_slide_duration":5000,"background_slideshow_transition_duration":500}'> -->
-						<section class="elementor-section elementor-top-section elementor-element elementor-element-a2306ca elementor-section-height-min-height elementor-section-boxed elementor-section-height-default elementor-section-items-middle" data-id="a2306ca" data-element_type="section" data-settings='{"background_background":"slideshow","background_slideshow_gallery":[{"id":52,"url":"https:\/\/wasiarain.github.io\/Muza\/assets\/images\/s12.jpg"},{"id":44,"url":"https:\/\/wasiarain.github.io\/Muza\/assets\/images\/s4.jpg"},{"id":45,"url":"https:\/\/wasiarain.github.io\/Muza\/assets\/images\/s5.jpg"}],"background_slideshow_slide_transition":"slide_left","background_slideshow_loop":"yes","background_slideshow_slide_duration":5000,"background_slideshow_transition_duration":500}'>
+						<section id="home" class="elementor-section elementor-top-section elementor-element elementor-element-a2306ca elementor-section-height-min-height elementor-section-boxed elementor-section-height-default elementor-section-items-middle" data-id="a2306ca" data-element_type="section" data-settings='{"background_background":"slideshow","background_slideshow_gallery":[{"id":52,"url":"https:\/\/wasiarain.github.io\/Muza\/assets\/images\/s12.jpg"},{"id":44,"url":"https:\/\/wasiarain.github.io\/Muza\/assets\/images\/s4.jpg"},{"id":45,"url":"https:\/\/wasiarain.github.io\/Muza\/assets\/images\/s5.jpg"}],"background_slideshow_slide_transition":"slide_left","background_slideshow_loop":"yes","background_slideshow_slide_duration":5000,"background_slideshow_transition_duration":500}'>
 							<div class="elementor-background-overlay"></div>
 							<div class="elementor-container elementor-column-gap-default">
 								<div class="elementor-row">
@@ -743,7 +881,7 @@
 												<div class="elementor-element elementor-element-ec61174 elementor-align-left elementor-mobile-align-center elementor-widget elementor-widget-button" data-id="ec61174" data-element_type="widget" data-widget_type="button.default">
 													<div class="elementor-widget-container">
 														<div class="elementor-button-wrapper">
-															<a href="#" class="elementor-button-link elementor-button elementor-size-md" role="button">
+															<a href="./index.html" target="_blank" class="elementor-button-link elementor-button elementor-size-md" role="button">
 																<span class="elementor-button-content-wrapper">
 																	<span class="elementor-button-icon elementor-align-icon-right">
 																		<i aria-hidden="true" class="fas fa-long-arrow-alt-right"></i>
@@ -767,8 +905,8 @@
 						</section>
 						<!-- Landing Page end -->
 
-						<!-- A start -->
-						<section class="elementor-section elementor-top-section elementor-element elementor-element-77e2aa8 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="77e2aa8" data-element_type="section">
+						<!-- About Section start -->
+						<section id="about-us" class="elementor-section elementor-top-section elementor-element elementor-element-77e2aa8 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="77e2aa8" data-element_type="section">
 							<div class="elementor-container elementor-column-gap-default">
 								<div class="elementor-row">
 									<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-359b223" data-id="359b223" data-element_type="column">
@@ -849,14 +987,14 @@
 												<div class="elementor-element elementor-element-f1e6fd1 elementor-widget elementor-widget-image" data-id="f1e6fd1" data-element_type="widget" data-widget_type="image.default">
 													<div class="elementor-widget-container">
 														<div class="elementor-image">
-															<img decoding="async" width="800" height="534" src="./wp-content/uploads/sites/20/2021/06/s8-1536x1024.jpg" class="attachment-large size-large wp-image-48" alt="" loading="lazy" sizes="(max-width: 800px) 100vw, 800px" />
+															<img decoding="async" width="800" height="534" src="./assets/images/s8-1536x1024.jpg" class="attachment-large size-large wp-image-48" alt="" loading="lazy" sizes="(max-width: 800px) 100vw, 800px" />
 														</div>
 													</div>
 												</div>
 												<div class="elementor-element elementor-element-d098c48 elementor-widget__width-initial elementor-widget-mobile__width-initial elementor-absolute elementor-widget elementor-widget-image" data-id="d098c48" data-element_type="widget" data-settings='{"_position":"absolute"}' data-widget_type="image.default">
 													<div class="elementor-widget-container">
 														<div class="elementor-image">
-															<img decoding="async" width="800" height="534" src="./wp-content/uploads/sites/20/2021/06/s3-1536x1024.jpg" class="attachment-large size-large wp-image-43" alt="" loading="lazy" sizes="(max-width: 800px) 100vw, 800px" />
+															<img decoding="async" width="800" height="534" src="./assets/images/s3-1536x1024.jpg" class="attachment-large size-large wp-image-43" alt="" loading="lazy" sizes="(max-width: 800px) 100vw, 800px" />
 														</div>
 													</div>
 												</div>
@@ -866,10 +1004,10 @@
 								</div>
 							</div>
 						</section>
-						<!-- A end -->
+						<!-- About Section end -->
 
-						<!-- B start -->
-						<section class="elementor-section elementor-top-section elementor-element elementor-element-f638053 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="f638053" data-element_type="section" data-settings='{"background_background":"classic"}'>
+						<!-- Why Choose Us Section start -->
+						<section id="why-choose-us" class="elementor-section elementor-top-section elementor-element elementor-element-f638053 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="f638053" data-element_type="section" data-settings='{"background_background":"classic"}'>
 							<div class="elementor-container elementor-column-gap-default">
 								<div class="elementor-row">
 									<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-bc06ab0" data-id="bc06ab0" data-element_type="column" data-settings='{"background_background":"slideshow","background_slideshow_gallery":[],"background_slideshow_loop":"yes","background_slideshow_slide_duration":5000,"background_slideshow_slide_transition":"fade","background_slideshow_transition_duration":500}'>
@@ -1080,10 +1218,10 @@
 								</div>
 							</div>
 						</section>
-						<!-- B end -->
+						<!-- Why Choose Us Section end -->
 
-						<!-- C start -->
-						<section class="elementor-section elementor-top-section elementor-element elementor-element-0f89a71 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="0f89a71" data-element_type="section">
+						<!-- How it Works Section start -->
+						<section id="how-it-works" class="elementor-section elementor-top-section elementor-element elementor-element-0f89a71 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="0f89a71" data-element_type="section">
 							<div class="elementor-container elementor-column-gap-default">
 								<div class="elementor-row">
 									<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-e956f42" data-id="e956f42" data-element_type="column">
@@ -1251,10 +1389,10 @@
 								</div>
 							</div>
 						</section>
-						<!-- C end -->
+						<!-- How it Works Section end -->
 
-						<!-- D start -->
-						<section class="elementor-section elementor-top-section elementor-element elementor-element-102aaf5 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="102aaf5" data-element_type="section" data-settings='{"background_background":"classic"}'>
+						<!-- Buy & Sell Section start -->
+						<section id="buy-sell" class="elementor-section elementor-top-section elementor-element elementor-element-102aaf5 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="102aaf5" data-element_type="section" data-settings='{"background_background":"classic"}'>
 							<div class="elementor-background-overlay"></div>
 							<div class="elementor-container elementor-column-gap-default">
 								<div class="elementor-row">
@@ -1305,7 +1443,7 @@
 												<div class="elementor-element elementor-element-67fbc68 elementor-align-left elementor-mobile-align-center elementor-widget elementor-widget-button" data-id="67fbc68" data-element_type="widget" data-widget_type="button.default">
 													<div class="elementor-widget-container">
 														<div class="elementor-button-wrapper">
-															<a href="#" class="elementor-button-link elementor-button elementor-size-md" role="button">
+															<a href="./index.html" target="_blank" class="elementor-button-link elementor-button elementor-size-md" role="button">
 																<span class="elementor-button-content-wrapper">
 																	<span class="elementor-button-icon elementor-align-icon-right">
 																		<i aria-hidden="true" class="fas fa-long-arrow-alt-right"></i>
@@ -1326,7 +1464,7 @@
 													<div class="elementor-widget-container">
 														<div class="elementor-wrapper elementor-open-inline">
 															<div class="elementor-video"></div>
-															<div class="elementor-custom-embed-image-overlay" style="background-image: url(./wp-content/uploads/sites/20/2021/06/s12.jpg);">
+															<div class="elementor-custom-embed-image-overlay" style="background-image: url(./assets/images/s12.jpg);">
 																<div class="elementor-custom-embed-play" role="button" aria-label="Play Video" tabindex="0">
 																	<i aria-hidden="true" class="eicon-play"></i>
 																	<span class="elementor-screen-only">Play Video</span>
@@ -1341,10 +1479,10 @@
 								</div>
 							</div>
 						</section>
-						<!-- D end -->
+						<!-- Buy & Sell Section end -->
 
-						<!-- E start -->
-						<section class="elementor-section elementor-top-section elementor-element elementor-element-3cd3f0a elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="3cd3f0a" data-element_type="section">
+						<!-- Our Team Section start -->
+						<section id="our-team" class="elementor-section elementor-top-section elementor-element elementor-element-3cd3f0a elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="3cd3f0a" data-element_type="section">
 							<div class="elementor-container elementor-column-gap-default">
 								<div class="elementor-row">
 									<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-768514a" data-id="768514a" data-element_type="column">
@@ -1384,7 +1522,7 @@
 																		<div class="elementor-element elementor-element-e9e0839 elementor-widget elementor-widget-image" data-id="e9e0839" data-element_type="widget" data-widget_type="image.default">
 																			<div class="elementor-widget-container">
 																				<div class="elementor-image">
-																					<img decoding="async" src="./wp-content/uploads/sites/20/elementor/thumbs/t5-p8sgsbxddxllqmgth58xvza9fm22pn07l23zn3mnco.jpg" title="t5" alt="t5" loading="lazy" />
+																					<img decoding="async" src="./assets/images/thumbs/t5-p8sgsbxddxllqmgth58xvza9fm22pn07l23zn3mnco.jpg" title="t5" alt="t5" loading="lazy" />
 																				</div>
 																			</div>
 																		</div>
@@ -1411,7 +1549,7 @@
 																		<div class="elementor-element elementor-element-94501e4 elementor-widget elementor-widget-image" data-id="94501e4" data-element_type="widget" data-widget_type="image.default">
 																			<div class="elementor-widget-container">
 																				<div class="elementor-image">
-																					<img decoding="async" src="./wp-content/uploads/sites/20/elementor/thumbs/t4-p8sgsbxddxllqmgth58xvza9fm22pn07l23zn3mnco.jpg" title="t4" alt="t4" loading="lazy" />
+																					<img decoding="async" src="./assets/images/thumbs/t4-p8sgsbxddxllqmgth58xvza9fm22pn07l23zn3mnco.jpg" title="t4" alt="t4" loading="lazy" />
 																				</div>
 																			</div>
 																		</div>
@@ -1438,7 +1576,7 @@
 																		<div class="elementor-element elementor-element-ed3e7d3 elementor-widget elementor-widget-image" data-id="ed3e7d3" data-element_type="widget" data-widget_type="image.default">
 																			<div class="elementor-widget-container">
 																				<div class="elementor-image">
-																					<img decoding="async" src="./wp-content/uploads/sites/20/elementor/thumbs/t2-p8sgsa1p09j13ejjs4foqzrc8ubca8sqwst0ojpfp4.jpg" title="t2" alt="t2" loading="lazy" />
+																					<img decoding="async" src="./assets/images/thumbs/t2-p8sgsa1p09j13ejjs4foqzrc8ubca8sqwst0ojpfp4.jpg" title="t2" alt="t2" loading="lazy" />
 																				</div>
 																			</div>
 																		</div>
@@ -1465,7 +1603,7 @@
 																		<div class="elementor-element elementor-element-4959a46 elementor-widget elementor-widget-image" data-id="4959a46" data-element_type="widget" data-widget_type="image.default">
 																			<div class="elementor-widget-container">
 																				<div class="elementor-image">
-																					<img decoding="async" src="./wp-content/uploads/sites/20/elementor/thumbs/t3-p8sgsazj73kbf0i6mmubbhisu86phxwh8xgi5to1iw.jpg" title="t3" alt="t3" loading="lazy" />
+																					<img decoding="async" src="./assets/images/thumbs/t3-p8sgsazj73kbf0i6mmubbhisu86phxwh8xgi5to1iw.jpg" title="t3" alt="t3" loading="lazy" />
 																				</div>
 																			</div>
 																		</div>
@@ -1495,10 +1633,10 @@
 								</div>
 							</div>
 						</section>
-						<!-- E end -->
+						<!-- Our Team Section end -->
 
-						<!-- F start -->
-						<section class="elementor-section elementor-top-section elementor-element elementor-element-ba6d0f9 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="ba6d0f9" data-element_type="section" data-settings='{"background_background":"classic"}'>
+						<!-- Testimonial Section start -->
+						<section id="testimonial" class="elementor-section elementor-top-section elementor-element elementor-element-ba6d0f9 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="ba6d0f9" data-element_type="section" data-settings='{"background_background":"classic"}'>
 							<div class="elementor-background-overlay"></div>
 							<div class="elementor-container elementor-column-gap-default">
 								<div class="elementor-row">
@@ -1546,7 +1684,7 @@
 																			</div>
 																			<div class="elementor-testimonial__footer">
 																				<div class="elementor-testimonial__image">
-																					<img decoding="async" src="./wp-content/uploads/sites/20/2021/06/t5.jpg" alt="jhon Snow" />
+																					<img decoding="async" src="./assets/images/t5.jpg" alt="jhon Snow" />
 																				</div>
 																				<cite class="elementor-testimonial__cite"><span class="elementor-testimonial__name">jhon Snow</span><span class="elementor-testimonial__title">Themeforest</span></cite>
 																			</div>
@@ -1563,7 +1701,7 @@
 																			</div>
 																			<div class="elementor-testimonial__footer">
 																				<div class="elementor-testimonial__image">
-																					<img decoding="async" src="./wp-content/uploads/sites/20/2021/06/t4.jpg" alt="Jhon Doe" />
+																					<img decoding="async" src="./assets/images/t4.jpg" alt="Jhon Doe" />
 																				</div>
 																				<cite class="elementor-testimonial__cite"><span class="elementor-testimonial__name">Jhon Doe</span><span class="elementor-testimonial__title">Themeforest</span></cite>
 																			</div>
@@ -1580,7 +1718,7 @@
 																			</div>
 																			<div class="elementor-testimonial__footer">
 																				<div class="elementor-testimonial__image">
-																					<img decoding="async" src="./wp-content/uploads/sites/20/2021/06/t2.jpg" alt="Sam Doe" />
+																					<img decoding="async" src="./assets/images/t2.jpg" alt="Sam Doe" />
 																				</div>
 																				<cite class="elementor-testimonial__cite"><span class="elementor-testimonial__name">Sam Doe</span><span class="elementor-testimonial__title">Themeforest</span></cite>
 																			</div>
@@ -1606,10 +1744,10 @@
 								</div>
 							</div>
 						</section>
-						<!-- F end -->
+						<!-- Testimonial Section end -->
 
-						<!-- G start -->
-						<section class="elementor-section elementor-top-section elementor-element elementor-element-4c4d203 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="4c4d203" data-element_type="section" data-settings='{"background_background":"classic"}'>
+						<!-- Contact Us Section start -->
+						<section id="contact-us" class="elementor-section elementor-top-section elementor-element elementor-element-4c4d203 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="4c4d203" data-element_type="section" data-settings='{"background_background":"classic"}'>
 							<div class="elementor-background-overlay"></div>
 							<div class="elementor-container elementor-column-gap-default">
 								<div class="elementor-row">
@@ -1718,9 +1856,9 @@
 								</div>
 							</div>
 						</section>
-						<!-- G end -->
+						<!-- Contact Us Section end -->
 
-						<!-- H start -->
+						<!-- Bottom Bar start -->
 						<section class="elementor-section elementor-top-section elementor-element elementor-element-1a2218b elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="1a2218b" data-element_type="section" data-settings='{"background_background":"classic"}'>
 							<div class="elementor-container elementor-column-gap-default">
 								<div class="elementor-row">
@@ -1817,7 +1955,7 @@
 								</div>
 							</div>
 						</section>
-						<!-- H end -->
+						<!-- Bottom Bar end -->
 
 					</div>
 				</div>
@@ -1827,7 +1965,7 @@
 	</main>
 	<!-- Main Section end -->
 
-	<!-- Footer start -->
+	<!-- Footer Section start -->
 	<div data-elementor-type="footer" data-elementor-id="31" class="elementor elementor-31 elementor-location-footer">
 		<div class="elementor-section-wrap">
 			<section class="elementor-section elementor-top-section elementor-element elementor-element-547068a1 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="547068a1" data-element_type="section" data-settings='{"background_background":"classic"}'>
@@ -2063,7 +2201,44 @@
 			</footer>
 		</div>
 	</div>
-	<!-- Footer end -->
+	<!-- Footer Section end -->
+
+
+	<link rel="stylesheet" id="e-animations-css" href="https://yrkit.rometheme.pro/bitco/wp-content/plugins/elementor/assets/lib/animations/animations.min.css?ver=3.13.4" media="all" />
+	<script src="https://yrkit.rometheme.pro/bitco/wp-content/plugins/elementor-pro/assets/lib/smartmenus/jquery.smartmenus.min.js?ver=1.0.1" id="smartmenus-js"></script>
+	<script src="https://yrkit.rometheme.pro/bitco/wp-includes/js/imagesloaded.min.js?ver=4.1.4" id="imagesloaded-js"></script>
+	<script src="https://yrkit.rometheme.pro/bitco/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.7.1" id="elementor-pro-webpack-runtime-js"></script>
+	<script src="https://yrkit.rometheme.pro/bitco/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.13.4" id="elementor-webpack-runtime-js"></script>
+	<script src="https://yrkit.rometheme.pro/bitco/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.13.4" id="elementor-frontend-modules-js"></script>
+	<script src="https://yrkit.rometheme.pro/bitco/wp-includes/js/dist/vendor/wp-polyfill-inert.min.js?ver=3.1.2" id="wp-polyfill-inert-js"></script>
+	<script src="https://yrkit.rometheme.pro/bitco/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.11" id="regenerator-runtime-js"></script>
+	<script src="https://yrkit.rometheme.pro/bitco/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0" id="wp-polyfill-js"></script>
+	<script src="https://yrkit.rometheme.pro/bitco/wp-includes/js/dist/hooks.min.js?ver=4169d3cf8e8d95a3d6d5" id="wp-hooks-js"></script>
+	<script src="https://yrkit.rometheme.pro/bitco/wp-includes/js/dist/i18n.min.js?ver=9e794f35a71bb98672ae" id="wp-i18n-js"></script>
+	<script src="https://yrkit.rometheme.pro/bitco/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.7.1" id="elementor-pro-frontend-js"></script>
+	<script src="https://yrkit.rometheme.pro/bitco/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min.js?ver=4.0.2" id="elementor-waypoints-js"></script>
+	<script src="https://yrkit.rometheme.pro/bitco/wp-includes/js/jquery/ui/core.min.js?ver=1.13.2" id="jquery-ui-core-js"></script>
+	<script src="https://yrkit.rometheme.pro/bitco/wp-content/plugins/elementor/assets/lib/swiper/swiper.min.js?ver=5.3.6" id="swiper-js"></script>
+	<script src="https://yrkit.rometheme.pro/bitco/wp-content/plugins/elementor/assets/lib/share-link/share-link.min.js?ver=3.13.4" id="share-link-js"></script>
+	<script src="https://yrkit.rometheme.pro/bitco/wp-content/plugins/elementor/assets/lib/dialog/dialog.min.js?ver=4.9.0" id="elementor-dialog-js"></script>
+	<script src="https://yrkit.rometheme.pro/bitco/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.13.4" id="elementor-frontend-js"></script>
+	<script src="https://yrkit.rometheme.pro/bitco/wp-content/plugins/elementor-pro/assets/js/preloaded-elements-handlers.min.js?ver=3.7.1" id="pro-preloaded-elements-handlers-js"></script>
+	<script src="https://yrkit.rometheme.pro/bitco/wp-content/plugins/elementor/assets/js/preloaded-modules.min.js?ver=3.13.4" id="preloaded-modules-js"></script>
+	<script src="https://yrkit.rometheme.pro/bitco/wp-content/plugins/elementor-pro/assets/lib/sticky/jquery.sticky.min.js?ver=3.7.1" id="e-sticky-js"></script>
+	
+	<script>
+		console.log("|| Developed by WASI ||\n","Visit my Portfolio: https://wasiarain.github.io/Portfolio/");
+	</script>
+
+	<!-- 
+	https:\/\/yrkit.rometheme.pro\/bitco\/wp-content\/uploads\/sites\/20\/2021\/06\/s12.jpg,
+	https:\/\/wasiarain.github.io\/Muza\/assets\/images\/s12.jpg,
+	https:\/\/yrkit.rometheme.pro\/bitco\/wp-content\/uploads\/sites\/20\/2021\/06\/s4.jpg,
+	https:\/\/wasiarain.github.io\/Muza\/assets\/images\/s4.jpg
+	https:\/\/yrkit.rometheme.pro\/bitco\/wp-content\/uploads\/sites\/20\/2021\/06\/s5.jpg,
+	https:\/\/wasiarain.github.io\/Muza\/assets\/images\/s5.jpg,
+	https://wasiarain.github.io/Muza/assets/images/s12.jpg
+	-->
 
 	<!-- links -->
 	<!--
@@ -2088,442 +2263,8 @@
 	<script src="./wp-content/plugins/elementor-pro/assets/js/preloaded-elements-handlers.min.js" id="pro-preloaded-elements-handlers-js"></script>
 	<script src="./wp-content/plugins/elementor/assets/js/preloaded-modules.min.js" id="preloaded-modules-js"></script>
 	<script src="./wp-content/plugins/elementor-pro/assets/lib/sticky/jquery.sticky.min.js" id="e-sticky-js"></script>
-	<script id="wp-i18n-js-after">
-		wp.i18n.setLocaleData({
-			"text direction\u0004ltr": ["ltr"],
-		});
-	</script>
-	<script id="elementor-pro-frontend-js-before">
-		var ElementorProFrontendConfig = {
-			ajaxurl: "https:\/\/yrkit.rometheme.pro\/bitco\/wp-admin\/admin-ajax.php",
-			nonce: "2bb870c4d3",
-			urls: {
-				assets:
-					"https:\/\/yrkit.rometheme.pro\/bitco\/wp-content\/plugins\/elementor-pro\/assets\/",
-				rest: "https:\/\/yrkit.rometheme.pro\/bitco\/wp-json\/",
-			},
-			shareButtonsNetworks: {
-				facebook: {
-					title: "Facebook",
-					has_counter: true,
-				},
-				twitter: {
-					title: "Twitter",
-				},
-				linkedin: {
-					title: "LinkedIn",
-					has_counter: true,
-				},
-				pinterest: {
-					title: "Pinterest",
-					has_counter: true,
-				},
-				reddit: {
-					title: "Reddit",
-					has_counter: true,
-				},
-				vk: {
-					title: "VK",
-					has_counter: true,
-				},
-				odnoklassniki: {
-					title: "OK",
-					has_counter: true,
-				},
-				tumblr: {
-					title: "Tumblr",
-				},
-				digg: {
-					title: "Digg",
-				},
-				skype: {
-					title: "Skype",
-				},
-				stumbleupon: {
-					title: "StumbleUpon",
-					has_counter: true,
-				},
-				mix: {
-					title: "Mix",
-				},
-				telegram: {
-					title: "Telegram",
-				},
-				pocket: {
-					title: "Pocket",
-					has_counter: true,
-				},
-				xing: {
-					title: "XING",
-					has_counter: true,
-				},
-				whatsapp: {
-					title: "WhatsApp",
-				},
-				email: {
-					title: "Email",
-				},
-				print: {
-					title: "Print",
-				},
-			},
-			facebook_sdk: {
-				lang: "en_US",
-				app_id: "",
-			},
-			lottie: {
-				defaultAnimationUrl:
-					"https:\/\/yrkit.rometheme.pro\/bitco\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json",
-			},
-		};
-	</script>
-	<script id="elementor-frontend-js-before">
-		var elementorFrontendConfig = {
-			environmentMode: {
-				edit: false,
-				wpPreview: false,
-				isScriptDebug: false,
-			},
-			i18n: {
-				shareOnFacebook: "Share on Facebook",
-				shareOnTwitter: "Share on Twitter",
-				pinIt: "Pin it",
-				download: "Download",
-				downloadImage: "Download image",
-				fullscreen: "Fullscreen",
-				zoom: "Zoom",
-				share: "Share",
-				playVideo: "Play Video",
-				previous: "Previous",
-				next: "Next",
-				close: "Close",
-			},
-			is_rtl: false,
-			breakpoints: {
-				xs: 0,
-				sm: 480,
-				md: 768,
-				lg: 1025,
-				xl: 1440,
-				xxl: 1600,
-			},
-			responsive: {
-				breakpoints: {
-					mobile: {
-						label: "Mobile Portrait",
-						value: 767,
-						default_value: 767,
-						direction: "max",
-						is_enabled: true,
-					},
-					mobile_extra: {
-						label: "Mobile Landscape",
-						value: 880,
-						default_value: 880,
-						direction: "max",
-						is_enabled: false,
-					},
-					tablet: {
-						label: "Tablet Portrait",
-						value: 1024,
-						default_value: 1024,
-						direction: "max",
-						is_enabled: true,
-					},
-					tablet_extra: {
-						label: "Tablet Landscape",
-						value: 1200,
-						default_value: 1200,
-						direction: "max",
-						is_enabled: false,
-					},
-					laptop: {
-						label: "Laptop",
-						value: 1366,
-						default_value: 1366,
-						direction: "max",
-						is_enabled: false,
-					},
-					widescreen: {
-						label: "Widescreen",
-						value: 2400,
-						default_value: 2400,
-						direction: "min",
-						is_enabled: false,
-					},
-				},
-			},
-			version: "3.13.4",
-			is_static: false,
-			experimentalFeatures: {
-				a11y_improvements: true,
-				additional_custom_breakpoints: true,
-				theme_builder_v2: true,
-				"landing-pages": true,
-				"page-transitions": true,
-				notes: true,
-				"form-submissions": true,
-				e_scroll_snap: true,
-			},
-			urls: {
-				assets:
-					"https:\/\/yrkit.rometheme.pro\/bitco\/wp-content\/plugins\/elementor\/assets\/",
-			},
-			swiperClass: "swiper-container",
-			settings: {
-				page: [],
-				editorPreferences: [],
-			},
-			kit: {
-				body_background_background: "classic",
-				active_breakpoints: ["viewport_mobile", "viewport_tablet"],
-				global_image_lightbox: "yes",
-				lightbox_enable_counter: "yes",
-				lightbox_enable_fullscreen: "yes",
-				lightbox_enable_zoom: "yes",
-				lightbox_enable_share: "yes",
-				lightbox_title_src: "title",
-				lightbox_description_src: "description",
-			},
-			post: {
-				id: 2,
-				title: "Bitco%20%E2%80%93%20Just%20another%20Template%20Kit%20site",
-				excerpt: "",
-				featuredImage: false,
-			},
-		};
-	</script>
 	-->
 	<!-- links -->
-
-	
-	<link rel="stylesheet" id="e-animations-css" href="https://yrkit.rometheme.pro/bitco/wp-content/plugins/elementor/assets/lib/animations/animations.min.css?ver=3.13.4" media="all" />
-	<script src="https://yrkit.rometheme.pro/bitco/wp-content/plugins/elementor-pro/assets/lib/smartmenus/jquery.smartmenus.min.js?ver=1.0.1" id="smartmenus-js"></script>
-	<script src="https://yrkit.rometheme.pro/bitco/wp-includes/js/imagesloaded.min.js?ver=4.1.4" id="imagesloaded-js"></script>
-	<script src="https://yrkit.rometheme.pro/bitco/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.7.1" id="elementor-pro-webpack-runtime-js"></script>
-	<script src="https://yrkit.rometheme.pro/bitco/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.13.4" id="elementor-webpack-runtime-js"></script>
-	<script src="https://yrkit.rometheme.pro/bitco/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.13.4" id="elementor-frontend-modules-js"></script>
-	<script src="https://yrkit.rometheme.pro/bitco/wp-includes/js/dist/vendor/wp-polyfill-inert.min.js?ver=3.1.2" id="wp-polyfill-inert-js"></script>
-	<script src="https://yrkit.rometheme.pro/bitco/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.11" id="regenerator-runtime-js"></script>
-	<script src="https://yrkit.rometheme.pro/bitco/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0" id="wp-polyfill-js"></script>
-	<script src="https://yrkit.rometheme.pro/bitco/wp-includes/js/dist/hooks.min.js?ver=4169d3cf8e8d95a3d6d5" id="wp-hooks-js"></script>
-	<script src="https://yrkit.rometheme.pro/bitco/wp-includes/js/dist/i18n.min.js?ver=9e794f35a71bb98672ae" id="wp-i18n-js"></script>
-	<script src="https://yrkit.rometheme.pro/bitco/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.7.1" id="elementor-pro-frontend-js"></script>
-	<script src="https://yrkit.rometheme.pro/bitco/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min.js?ver=4.0.2" id="elementor-waypoints-js"></script>
-	<script src="https://yrkit.rometheme.pro/bitco/wp-includes/js/jquery/ui/core.min.js?ver=1.13.2" id="jquery-ui-core-js"></script>
-	<script src="https://yrkit.rometheme.pro/bitco/wp-content/plugins/elementor/assets/lib/swiper/swiper.min.js?ver=5.3.6" id="swiper-js"></script>
-	<script src="https://yrkit.rometheme.pro/bitco/wp-content/plugins/elementor/assets/lib/share-link/share-link.min.js?ver=3.13.4" id="share-link-js"></script>
-	<script src="https://yrkit.rometheme.pro/bitco/wp-content/plugins/elementor/assets/lib/dialog/dialog.min.js?ver=4.9.0" id="elementor-dialog-js"></script>
-	<script src="https://yrkit.rometheme.pro/bitco/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.13.4" id="elementor-frontend-js"></script>
-	<script src="https://yrkit.rometheme.pro/bitco/wp-content/plugins/elementor-pro/assets/js/preloaded-elements-handlers.min.js?ver=3.7.1" id="pro-preloaded-elements-handlers-js"></script>
-	<script src="https://yrkit.rometheme.pro/bitco/wp-content/plugins/elementor/assets/js/preloaded-modules.min.js?ver=3.13.4" id="preloaded-modules-js"></script>
-	<script src="https://yrkit.rometheme.pro/bitco/wp-content/plugins/elementor-pro/assets/lib/sticky/jquery.sticky.min.js?ver=3.7.1" id="e-sticky-js"></script>
-	<script id="wp-i18n-js-after">
-		wp.i18n.setLocaleData({
-			"text direction\u0004ltr": ["ltr"],
-		});
-	</script>
-	<script id="elementor-pro-frontend-js-before">
-		var ElementorProFrontendConfig = {
-			ajaxurl: "https:\/\/yrkit.rometheme.pro\/bitco\/wp-admin\/admin-ajax.php",
-			nonce: "2bb870c4d3",
-			urls: {
-				assets: "https:\/\/yrkit.rometheme.pro\/bitco\/wp-content\/plugins\/elementor-pro\/assets\/",
-				rest: "https:\/\/yrkit.rometheme.pro\/bitco\/wp-json\/",
-			},
-			shareButtonsNetworks: {
-				facebook: {
-					title: "Facebook",
-					has_counter: true,
-				},
-				twitter: {
-					title: "Twitter",
-				},
-				linkedin: {
-					title: "LinkedIn",
-					has_counter: true,
-				},
-				pinterest: {
-					title: "Pinterest",
-					has_counter: true,
-				},
-				reddit: {
-					title: "Reddit",
-					has_counter: true,
-				},
-				vk: {
-					title: "VK",
-					has_counter: true,
-				},
-				odnoklassniki: {
-					title: "OK",
-					has_counter: true,
-				},
-				tumblr: {
-					title: "Tumblr",
-				},
-				digg: {
-					title: "Digg",
-				},
-				skype: {
-					title: "Skype",
-				},
-				stumbleupon: {
-					title: "StumbleUpon",
-					has_counter: true,
-				},
-				mix: {
-					title: "Mix",
-				},
-				telegram: {
-					title: "Telegram",
-				},
-				pocket: {
-					title: "Pocket",
-					has_counter: true,
-				},
-				xing: {
-					title: "XING",
-					has_counter: true,
-				},
-				whatsapp: {
-					title: "WhatsApp",
-				},
-				email: {
-					title: "Email",
-				},
-				print: {
-					title: "Print",
-				},
-			},
-			facebook_sdk: {
-				lang: "en_US",
-				app_id: "",
-			},
-			lottie: {
-				defaultAnimationUrl: "https:\/\/yrkit.rometheme.pro\/bitco\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json",
-			},
-		};
-	</script>
-	<script id="elementor-frontend-js-before">
-		var elementorFrontendConfig = {
-			environmentMode: {
-				edit: false,
-				wpPreview: false,
-				isScriptDebug: false,
-			},
-			i18n: {
-				shareOnFacebook: "Share on Facebook",
-				shareOnTwitter: "Share on Twitter",
-				pinIt: "Pin it",
-				download: "Download",
-				downloadImage: "Download image",
-				fullscreen: "Fullscreen",
-				zoom: "Zoom",
-				share: "Share",
-				playVideo: "Play Video",
-				previous: "Previous",
-				next: "Next",
-				close: "Close",
-			},
-			is_rtl: false,
-			breakpoints: {
-				xs: 0,
-				sm: 480,
-				md: 768,
-				lg: 1025,
-				xl: 1440,
-				xxl: 1600,
-			},
-			responsive: {
-				breakpoints: {
-					mobile: {
-						label: "Mobile Portrait",
-						value: 767,
-						default_value: 767,
-						direction: "max",
-						is_enabled: true,
-					},
-					mobile_extra: {
-						label: "Mobile Landscape",
-						value: 880,
-						default_value: 880,
-						direction: "max",
-						is_enabled: false,
-					},
-					tablet: {
-						label: "Tablet Portrait",
-						value: 1024,
-						default_value: 1024,
-						direction: "max",
-						is_enabled: true,
-					},
-					tablet_extra: {
-						label: "Tablet Landscape",
-						value: 1200,
-						default_value: 1200,
-						direction: "max",
-						is_enabled: false,
-					},
-					laptop: {
-						label: "Laptop",
-						value: 1366,
-						default_value: 1366,
-						direction: "max",
-						is_enabled: false,
-					},
-					widescreen: {
-						label: "Widescreen",
-						value: 2400,
-						default_value: 2400,
-						direction: "min",
-						is_enabled: false,
-					},
-				},
-			},
-			version: "3.13.4",
-			is_static: false,
-			experimentalFeatures: {
-				a11y_improvements: true,
-				additional_custom_breakpoints: true,
-				theme_builder_v2: true,
-				"landing-pages": true,
-				"page-transitions": true,
-				notes: true,
-				"form-submissions": true,
-				e_scroll_snap: true,
-			},
-			urls: {
-				assets: "https:\/\/yrkit.rometheme.pro\/bitco\/wp-content\/plugins\/elementor\/assets\/",
-			},
-			swiperClass: "swiper-container",
-			settings: {
-				page: [],
-				editorPreferences: [],
-			},
-			kit: {
-				body_background_background: "classic",
-				active_breakpoints: ["viewport_mobile", "viewport_tablet"],
-				global_image_lightbox: "yes",
-				lightbox_enable_counter: "yes",
-				lightbox_enable_fullscreen: "yes",
-				lightbox_enable_zoom: "yes",
-				lightbox_enable_share: "yes",
-				lightbox_title_src: "title",
-				lightbox_description_src: "description",
-			},
-			post: {
-				id: 2,
-				title: "Bitco%20%E2%80%93%20Just%20another%20Template%20Kit%20site",
-				excerpt: "",
-				featuredImage: false,
-			},
-		};
-	</script>
-
-	<script>
-		console.log("|| Developed by WASI ||\n","Visit my Portfolio: https://wasiarain.github.io/Portfolio/");
-	</script>
 
 </body>
 
